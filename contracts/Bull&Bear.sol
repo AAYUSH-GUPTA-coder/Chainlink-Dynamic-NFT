@@ -196,18 +196,6 @@ contract BullBear is ERC721, ERC721Enumerable, ERC721URIStorage, KeeperCompatibl
   function setVrfCoodinator(address _address) public onlyOwner {
     COORDINATOR = VRFCoordinatorV2Interface(_address);
   }
-    
-
-
-    // Helpers
-    function compareStrings(string memory a, string memory b) internal pure returns (bool) {
-        // No longer used as not being called when using VRF, as we're now using enums.
-        return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
-    }
-
-    function updateAllTokenUris(string memory trend) internal {
-      // The logic from this has been moved up to fulfill random words.
-    }
 
 
 
